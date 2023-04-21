@@ -38,5 +38,9 @@ export class AuthorListarComponent implements OnInit{
     this.dataSource.paginator = this.paginator;
   }
 
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
+
 
 }

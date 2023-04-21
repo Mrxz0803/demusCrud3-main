@@ -1,14 +1,19 @@
 <div class="container">
   <h1 style="text-align: center;">Listado de Autores</h1>
 
-  <div style="text-align: right;">
-    <button mat-raised-button color="primary"
-            routerLink="/authors/nuevo">Nuevo</button>
-  </div>
-  <mat-form-field>
-    <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
-  </mat-form-field>
-
+  <mat-grid-list cols="2" rowHeight="4em">
+    <mat-grid-tile>
+      <div style="text-align: right;">
+        <button mat-raised-button color="primary"
+                routerLink="/authors/nuevo">Nuevo</button>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field>
+        <input matInput (keyup)="filtrar($event)" placeholder="Buscar">
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
 
   <div class="example-container mat-elevation-z8">
     <mat-table #table [dataSource]="dataSource" matSort>
